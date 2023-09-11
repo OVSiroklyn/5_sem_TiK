@@ -8,7 +8,7 @@ public class OccureFrequency {
                 freq++;
             }
         }
-        return freq/word.trim().length();
+        return Double.valueOf(freq)/Double.valueOf(word.trim().length());
     }
 
 }
