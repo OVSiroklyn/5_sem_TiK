@@ -1,12 +1,11 @@
 package info_ammount;
 
-import info_ammount.calculate.InfoAmmount;
+import info_ammount.calculate.*;
 import info_ammount.gui.GUI;
 
 public class Main {
     public static void main(String[] args) {
-        InfoAmmount b1 = new InfoAmmount(200, 2000, 33);
-       System.out.println(b1.MethodHartli());
+        System.out.println(OccureFrequency.charFrequency("dasdasdaaaas", 'a'));
         GUI gui = new GUI();
         gui.setVisible(true);
     }
