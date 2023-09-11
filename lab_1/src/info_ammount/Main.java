@@ -5,7 +5,7 @@ import info_ammount.gui.GUI;
 
 public class Main {
     public static void main(String[] args) {
-        InfoAmmount b1 = new InfoAmmount(2000, 33);
+        InfoAmmount b1 = new InfoAmmount("dasdasdaaaas", 33);
         System.out.println(b1.MethodHartli());
         GUI gui = new GUI();
         gui.setVisible(true);
