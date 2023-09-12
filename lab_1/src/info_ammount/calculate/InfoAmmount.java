@@ -1,25 +1,26 @@
-package info_ammount.calculate;
-
 public class InfoAmmount {
 
-    int Page; // кількість сторінок
-    double nFinal;
-    double Charquant; //довжина повідомлення в знаках
+    int Charquant; //довжина повідомлення в знаках
+    String Beginstr;
     int Mquantity; //Кількість літер у алфавіту
-    double log2_m = Math.log(Mquantity) / Math.log(2);
-    double Iresult;
+    double log2_m =  (Math.log(Mquantity) / Math.log(2));
+    int Iresult;
 
-    public InfoAmmount(int Page,  double Charquant, int Mquantity) {
-        this.Page = Page;
-        this.Charquant = Charquant;
+    public InfoAmmount(String str, int Mquantity)
+    {
+        this.Charquant = 0;
+        this.Beginstr = str;
         this.Mquantity = Mquantity;
-        this.log2_m = Math.log(Mquantity) / Math.log(2);
+        for(int i = 0; i < str.length(); i++)
+        {
+            this.Charquant++;
+        }
 
+        this.log2_m =  (Math.log(Mquantity) / Math.log(2));
     }
-public double MethodHartli()
-{
-    nFinal = Page * Charquant;
-    return Iresult = nFinal * log2_m;
-}
+    public int MethodHartli()
+    {
+        return  Iresult = (int)( (Charquant) * (int)log2_m);
+    }
 
 }
