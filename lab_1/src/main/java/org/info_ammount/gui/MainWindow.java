@@ -1,5 +1,6 @@
 package org.info_ammount.gui;
 
+import org.info_ammount.calculate.OccureFrequency;
 import org.info_ammount.parser.Parser;
 
 import javax.swing.*;
@@ -62,15 +63,13 @@ public class MainWindow extends JFrame {
                 default -> selectedLangChars = 33;
             }
 
+            String text = "";
 
-            String link;
             if (inputTextField.getText() != null) {
                 //получаем текст с пер
-                inputTextField.getText();
-            }
-            if (inputLinkField.getText() != null) {
-                link = inputLinkField.getText();
-                Parser.parseUrl(link);
+                text = inputTextField.getText();
+            } else if (inputLinkField.getText() != null) {
+                text = Parser.parseUrl(inputLinkField.getText());
                 //Parser.parseUrl(link);
             }
 
@@ -93,8 +92,6 @@ public class MainWindow extends JFrame {
 
     private void setupTable() {
         HashMap<Character, Double> tempmap = new HashMap<Character, Double>();
-        tempmap.put('a', 0.123);
-        tempmap.put('g', 0.3);
 
         tableModel = new DataTableModel(tempmap);//new ArrayList<HashMap<Character, Double>>()); // <-- getRecipeArrayList() in ()
 
