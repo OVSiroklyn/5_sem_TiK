@@ -7,7 +7,7 @@ import org.info_ammount.gui.MainWindow;
 
 public class Main {
     public static void main(String[] args) {
-
+        // krutoi commit
         FlatDarculaLaf.setup();
         JFrame.setDefaultLookAndFeelDecorated(true);
         new MainWindow().setVisible(true);

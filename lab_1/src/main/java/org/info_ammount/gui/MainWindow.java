@@ -1,5 +1,7 @@
 package org.info_ammount.gui;
 
+import org.info_ammount.util.Gagulya;
+
 import javax.swing.*;
 import javax.swing.plaf.FontUIResource;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -8,7 +10,10 @@ import javax.swing.text.StyleContext;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Locale;
+
+import static org.info_ammount.util.Gagulya.*;
 
 public class MainWindow extends JFrame {
 
@@ -27,7 +32,10 @@ public class MainWindow extends JFrame {
     private JButton clearButton;
     private JTable symbolTable;
     private JLabel someLabel;
+    private JComboBox comboBox1;
 
+    private String[] chooseLang = {"ua", "en", "de"};
+    HashMap<String, Integer> languages = new HashMap<>();
     public MainWindow() {
         me.setText(" LAB-1 " + " | ");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -38,12 +46,22 @@ public class MainWindow extends JFrame {
 
         buttonListeners();
         setupTable();
+
+        comboBox1.setSelectedItem(0);
     }
 
     private void buttonListeners() {
         exitButton.addActionListener(e -> System.exit(0));
 
         workButton.addActionListener(e -> {
+            String selectedLanguage = (String) comboBox1.getSelectedItem();
+
+            switch (selectedLanguage) {
+                case "en" -> selectedLangChars = 26;
+                case "de" -> selectedLangChars = 30;
+                default -> selectedLangChars = 33;
+            }
+
             String link;
             if (inputTextField.getText() != null) {
                 inputTextField.getText();
@@ -53,7 +71,7 @@ public class MainWindow extends JFrame {
                 //Parser.parseUrl(link);
             }
             double s = 0.123;
-            someLabel.setText("Непомню что double | " + s); // GetChota.getNumber()
+            someLabel.setText("Непомню что double | " + s + " | " + selectedLanguage + " " + selectedLangChars); // GetChota.getNumber()
         });
 
         clearButton.addActionListener(e -> {
@@ -114,14 +132,14 @@ public class MainWindow extends JFrame {
      */
     private void $$$setupUI$$$() {
         mainPanel = new JPanel();
-        mainPanel.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(8, 5, new Insets(0, 0, 0, 0), -1, -1));
+        mainPanel.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(8, 4, new Insets(0, 0, 0, 0), -1, -1));
         mainPanel.setBackground(new Color(-14605013));
         mainPanel.setEnabled(false);
         mainPanel.setForeground(new Color(-5524801));
         toolbar = new JToolBar();
         toolbar.setBackground(new Color(-14605013));
         toolbar.setFloatable(false);
-        mainPanel.add(toolbar, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 5, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(-1, 20), null, 0, false));
+        mainPanel.add(toolbar, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 2, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(200, 20), null, 0, false));
         me = new JLabel();
         Font meFont = this.$$$getFont$$$(null, -1, 16, me.getFont());
         if (meFont != null) me.setFont(meFont);
@@ -145,9 +163,9 @@ public class MainWindow extends JFrame {
         textLabel.setText("Ввести текст");
         mainPanel.add(textLabel, new com.intellij.uiDesigner.core.GridConstraints(1, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 1, false));
         final com.intellij.uiDesigner.core.Spacer spacer1 = new com.intellij.uiDesigner.core.Spacer();
-        mainPanel.add(spacer1, new com.intellij.uiDesigner.core.GridConstraints(6, 0, 1, 5, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
+        mainPanel.add(spacer1, new com.intellij.uiDesigner.core.GridConstraints(6, 0, 1, 3, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
         final com.intellij.uiDesigner.core.Spacer spacer2 = new com.intellij.uiDesigner.core.Spacer();
-        mainPanel.add(spacer2, new com.intellij.uiDesigner.core.GridConstraints(7, 0, 1, 5, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
+        mainPanel.add(spacer2, new com.intellij.uiDesigner.core.GridConstraints(7, 0, 1, 3, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
         inputLinkField = new JTextField();
         inputLinkField.setBackground(new Color(-14605013));
         inputLinkField.setForeground(new Color(-5524801));
@@ -156,7 +174,7 @@ public class MainWindow extends JFrame {
         linkLabel = new JLabel();
         linkLabel.setBackground(new Color(-5524801));
         linkLabel.setForeground(new Color(-5524801));
-        linkLabel.setText("Ввести лінк");
+        linkLabel.setText("Ввести посилання");
         mainPanel.add(linkLabel, new com.intellij.uiDesigner.core.GridConstraints(2, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 1, false));
         workButton = new JButton();
         workButton.setBackground(new Color(-14605013));
@@ -172,7 +190,7 @@ public class MainWindow extends JFrame {
         final JScrollPane scrollPane1 = new JScrollPane();
         scrollPane1.setBackground(new Color(-14605013));
         scrollPane1.setForeground(new Color(-5524801));
-        mainPanel.add(scrollPane1, new com.intellij.uiDesigner.core.GridConstraints(5, 0, 1, 5, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        mainPanel.add(scrollPane1, new com.intellij.uiDesigner.core.GridConstraints(5, 0, 1, 4, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
         symbolTable = new JTable();
         symbolTable.setAutoResizeMode(4);
         symbolTable.setBackground(new Color(-14605013));
@@ -187,8 +205,12 @@ public class MainWindow extends JFrame {
         someLabel = new JLabel();
         someLabel.setBackground(new Color(-14605013));
         someLabel.setForeground(new Color(-5524801));
-        someLabel.setText("Непомню что double |");
+        someLabel.setText("double chota");
         mainPanel.add(someLabel, new com.intellij.uiDesigner.core.GridConstraints(4, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 1, false));
+        comboBox1 = new JComboBox<>(chooseLang);
+        comboBox1.setBackground(new Color(-14605013));
+        comboBox1.setForeground(new Color(-5524801));
+        mainPanel.add(comboBox1, new com.intellij.uiDesigner.core.GridConstraints(0, 2, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, null, new Dimension(75, 25), new Dimension(75, 25), 1, false));
     }
 
     /**
