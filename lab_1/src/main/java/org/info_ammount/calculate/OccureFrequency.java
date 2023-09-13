@@ -1,7 +1,5 @@
 package org.info_ammount.calculate;
 
-import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.TreeMap;
 
 public class OccureFrequency {
@@ -14,8 +12,8 @@ public class OccureFrequency {
         }
         return (double) freq / (double) word.length();
     }
-    public static HashMap<Character, Double> allCharCounter(String word){ // Видає перелік усіх частот появи у форматі HashSet
-        LinkedHashMap<Character, Double> allChar = new LinkedHashMap<>();
+    public static TreeMap<Character, Double> allCharCounter(String word){ // Видає перелік усіх частот появи у форматі HashSet
+        TreeMap<Character, Double> allChar = new TreeMap<>();
         for (int i = 0; i < word.length(); i++) {
             allChar.put(word.charAt(i), 0.0);
         }
@@ -23,9 +21,9 @@ public class OccureFrequency {
             allChar.put(i, charFrequency(word, i));
         }
         System.out.println(allChar);
-        TreeMap<Character, Double> treeChar = new TreeMap<>();
-        treeChar.putAll(allChar);
-        allChar.putAll(treeChar);
+    //    TreeMap<Character, Double> treeChar = new TreeMap<>();
+    //    treeChar.putAll(allChar);
+    //    allChar.putAll(treeChar);
         return allChar;
     }
 }

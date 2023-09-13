@@ -11,8 +11,7 @@ import javax.swing.table.TableColumnModel;
 import javax.swing.text.StyleContext;
 import java.awt.*;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
+import java.util.TreeMap;
 import java.util.Locale;
 
 import static org.info_ammount.util.Gagulya.*;
@@ -37,7 +36,7 @@ public class MainWindow extends JFrame {
     private JComboBox comboBox1;
 
     private String[] chooseLang = {"ua", "en", "de"};
-    HashMap<String, Integer> languages = new HashMap<>();
+    TreeMap<String, Integer> languages = new TreeMap<>();
     public MainWindow() {
         me.setText(" LAB-1 " + " | ");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -83,7 +82,7 @@ public class MainWindow extends JFrame {
         clearButton.addActionListener(e -> {
             inputTextField.setText("");
             inputLinkField.setText("");
-            someLabel.setText("Непомню что double |");
+            someLabel.setText("Количество информации |");
             //updateTable(getSumbolsMap().size()-1);
         });
     }
@@ -93,7 +92,7 @@ public class MainWindow extends JFrame {
     }
 
     private void setupTable() {
-        tableModel = new DataTableModel(new HashMap<Character, Double>());//new ArrayList<HashMap<Character, Double>>()); // <-- getRecipeArrayList() in ()
+        tableModel = new DataTableModel(new TreeMap<Character, Double>());//new ArrayList<TreeMap<Character, Double>>()); // <-- getRecipeArrayList() in ()
 
         symbolTable.setModel(tableModel);
         TableColumnModel columnModel = symbolTable.getColumnModel();
@@ -156,7 +155,7 @@ public class MainWindow extends JFrame {
         inputTextField = new JTextField();
         inputTextField.setBackground(new Color(-14605013));
         inputTextField.setForeground(new Color(-5524801));
-        inputTextField.setToolTipText("nihua ne delaet");
+        inputTextField.setToolTipText("Ничего не делает");
         mainPanel.add(inputTextField, new com.intellij.uiDesigner.core.GridConstraints(1, 2, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(220, -1), new Dimension(220, -1), 1, false));
         textLabel = new JLabel();
         textLabel.setBackground(new Color(-5524801));
@@ -170,7 +169,7 @@ public class MainWindow extends JFrame {
         inputLinkField = new JTextField();
         inputLinkField.setBackground(new Color(-14605013));
         inputLinkField.setForeground(new Color(-5524801));
-        inputLinkField.setToolTipText("nihua ne delaet");
+        inputLinkField.setToolTipText("Ничего не делает");
         mainPanel.add(inputLinkField, new com.intellij.uiDesigner.core.GridConstraints(2, 2, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(220, -1), new Dimension(220, -1), 1, false));
         linkLabel = new JLabel();
         linkLabel.setBackground(new Color(-5524801));
@@ -206,7 +205,7 @@ public class MainWindow extends JFrame {
         someLabel = new JLabel();
         someLabel.setBackground(new Color(-14605013));
         someLabel.setForeground(new Color(-5524801));
-        someLabel.setText("double chota");
+        someLabel.setText("Количество информации");
         mainPanel.add(someLabel, new com.intellij.uiDesigner.core.GridConstraints(4, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 1, false));
         comboBox1 = new JComboBox<>(chooseLang);
         comboBox1.setBackground(new Color(-14605013));
