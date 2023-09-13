@@ -1,6 +1,6 @@
 package org.info_ammount.gui;
 
-import org.info_ammount.util.Gagulya;
+import org.info_ammount.parser.Parser;
 
 import javax.swing.*;
 import javax.swing.plaf.FontUIResource;
@@ -54,22 +54,27 @@ public class MainWindow extends JFrame {
         exitButton.addActionListener(e -> System.exit(0));
 
         workButton.addActionListener(e -> {
+            // получаем выбраный елемент языка
             String selectedLanguage = (String) comboBox1.getSelectedItem();
-
             switch (selectedLanguage) {
                 case "en" -> selectedLangChars = 26;
                 case "de" -> selectedLangChars = 30;
                 default -> selectedLangChars = 33;
             }
 
+
             String link;
             if (inputTextField.getText() != null) {
+                //получаем текст с пер
                 inputTextField.getText();
             }
             if (inputLinkField.getText() != null) {
                 link = inputLinkField.getText();
+                Parser.parseUrl(link);
                 //Parser.parseUrl(link);
             }
+
+            // это просто прикол
             double s = 0.123;
             someLabel.setText("Непомню что double | " + s + " | " + selectedLanguage + " " + selectedLangChars); // GetChota.getNumber()
         });
