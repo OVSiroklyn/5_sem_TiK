@@ -1,4 +1,4 @@
-package info_ammount.parser;
+package org.info_ammount.parser;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package info_ammount.util;
+package org.info_ammount.util;
 
 import java.util.*;
 

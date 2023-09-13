@@ -1,4 +1,4 @@
-package GUI;
+package org.info_ammount.gui;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;

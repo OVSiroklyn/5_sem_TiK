@@ -1,4 +1,4 @@
-package GUI;
+package org.info_ammount.gui;
 
 import javax.swing.*;
 import javax.swing.plaf.FontUIResource;

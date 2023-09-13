@@ -1,11 +1,10 @@
-package info_ammount.calculate;
-
+package org.info_ammount.calculate;
 public class InfoAmmount {
 
     int Charquant; //довжина повідомлення в знаках
     String Beginstr;
     int Mquantity; //Кількість літер у алфавіту
-    double log2_m ;
+    double log2_m =  (Math.log(Mquantity) / Math.log(2));
     int Iresult;
 
     public InfoAmmount(String str, int Mquantity)

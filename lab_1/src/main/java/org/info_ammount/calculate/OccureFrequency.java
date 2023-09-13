@@ -1,4 +1,4 @@
-package info_ammount.calculate;
+package org.info_ammount.calculate;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
