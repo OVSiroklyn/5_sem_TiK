@@ -1,0 +1,67 @@
+Index: src/info_ammount/calculate/InfoAmmount.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package info_ammount.calculate;\r\n\r\npublic class InfoAmmount {\r\n\r\n   int Charquant; //довжина повідомлення в знаках\r\n    int Mquantity; //Кількість літер у алфавіту\r\n    double log2_m =  (Math.log(Mquantity) / Math.log(2));\r\n    int Iresult;\r\n\r\n    public InfoAmmount(int Charquant, int Mquantity)\r\n    {\r\n\r\n        this.Charquant = Charquant;\r\n        this.Mquantity = Mquantity;\r\n        this.log2_m =  (Math.log(Mquantity) / Math.log(2));\r\n    }\r\n    public int MethodHartli()\r\n    {\r\n        return  Iresult = (int)( (Charquant) * (int)log2_m);\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/info_ammount/calculate/InfoAmmount.java b/src/info_ammount/calculate/InfoAmmount.java
+--- a/src/info_ammount/calculate/InfoAmmount.java	(revision 2523d22239e37dfb62b252d4bc767e22f3f5e071)
++++ b/src/info_ammount/calculate/InfoAmmount.java	(date 1694449475949)
+@@ -2,16 +2,22 @@
+ 
+ public class InfoAmmount {
+ 
+-   int Charquant; //довжина повідомлення в знаках
++    int Charquant; //довжина повідомлення в знаках
++    String Beginstr;
+     int Mquantity; //Кількість літер у алфавіту
+     double log2_m =  (Math.log(Mquantity) / Math.log(2));
+     int Iresult;
+ 
+-    public InfoAmmount(int Charquant, int Mquantity)
++    public InfoAmmount(String str, int Mquantity)
+     {
+-
+-        this.Charquant = Charquant;
++        this.Charquant = 0;
++        this.Beginstr = str;
+         this.Mquantity = Mquantity;
++        for(int i = 0; i < str.length(); i++)
++        {
++            this.Charquant++;
++        }
++
+         this.log2_m =  (Math.log(Mquantity) / Math.log(2));
+     }
+     public int MethodHartli()
+Index: src/info_ammount/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package info_ammount;\r\n\r\nimport info_ammount.calculate.InfoAmmount;\r\nimport info_ammount.gui.GUI;\r\n\r\npublic class Main {\r\n    public static void main(String[] args) {\r\n        InfoAmmount b1 = new InfoAmmount(2000, 33);\r\n        System.out.println(b1.MethodHartli());\r\n        GUI gui = new GUI();\r\n        gui.setVisible(true);\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/info_ammount/Main.java b/src/info_ammount/Main.java
+--- a/src/info_ammount/Main.java	(revision 2523d22239e37dfb62b252d4bc767e22f3f5e071)
++++ b/src/info_ammount/Main.java	(date 1694449475943)
+@@ -5,7 +5,7 @@
+ 
+ public class Main {
+     public static void main(String[] args) {
+-        InfoAmmount b1 = new InfoAmmount(2000, 33);
++        InfoAmmount b1 = new InfoAmmount("dwdwdwdwdwd", 33);
+         System.out.println(b1.MethodHartli());
+         GUI gui = new GUI();
+         gui.setVisible(true);
+Index: src/info_ammount/calculate/OccureFrequency.java
+===================================================================
+diff --git a/src/info_ammount/calculate/OccureFrequency.java b/src/info_ammount/calculate/OccureFrequency.java
+deleted file mode 100644
+--- a/src/info_ammount/calculate/OccureFrequency.java	(revision 2523d22239e37dfb62b252d4bc767e22f3f5e071)
++++ /dev/null	(revision 2523d22239e37dfb62b252d4bc767e22f3f5e071)
+@@ -1,4 +0,0 @@
+-package info_ammount.calculate;
+-
+-public class OccureFrequency {
+-}

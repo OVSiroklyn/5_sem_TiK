@@ -2,9 +2,9 @@ package org.info_ammount.calculate;
 public class InfoAmmount {
 
     int Charquant; //довжина повідомлення в знаках
-    String Beginstr;
+    String Beginstr; //вхідна строка
     int Mquantity; //Кількість літер у алфавіту
-    double log2_m =  (Math.log(Mquantity) / Math.log(2));
+    double log2_m;
     int Iresult;
 
     public InfoAmmount(String str, int Mquantity)
@@ -21,7 +21,7 @@ public class InfoAmmount {
     }
     public int MethodHartli()
     {
-        return  Iresult = (int)( (Charquant) * (int)log2_m);
+        return  Iresult = ( (Charquant) * (int)log2_m);
     }
 
 }
