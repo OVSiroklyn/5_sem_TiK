@@ -1,5 +1,6 @@
 package org.info_ammount.gui;
 
+import org.info_ammount.calculate.InfoAmmount;
 import org.info_ammount.calculate.OccureFrequency;
 import org.info_ammount.parser.Parser;
 
@@ -73,9 +74,10 @@ public class MainWindow extends JFrame {
                 //Parser.parseUrl(link);
             }
 
-            // это просто прикол
-            double s = 0.123;
-            someLabel.setText("Непомню что double | " + s + " | " + selectedLanguage + " " + selectedLangChars); // GetChota.getNumber()
+            tableModel.updateTable(OccureFrequency.allCharCounter(text));
+
+            InfoAmmount s = new InfoAmmount(text, selectedLangChars);
+            someLabel.setText("Количество информации | " + s.MethodHartli() + " | " + selectedLanguage + " " + selectedLangChars); // GetChota.getNumber()
         });
 
         clearButton.addActionListener(e -> {
@@ -91,9 +93,7 @@ public class MainWindow extends JFrame {
     }
 
     private void setupTable() {
-        HashMap<Character, Double> tempmap = new HashMap<Character, Double>();
-
-        tableModel = new DataTableModel(tempmap);//new ArrayList<HashMap<Character, Double>>()); // <-- getRecipeArrayList() in ()
+        tableModel = new DataTableModel(new HashMap<Character, Double>());//new ArrayList<HashMap<Character, Double>>()); // <-- getRecipeArrayList() in ()
 
         symbolTable.setModel(tableModel);
         TableColumnModel columnModel = symbolTable.getColumnModel();
@@ -115,7 +115,6 @@ public class MainWindow extends JFrame {
         for (int column : centeredColumns) {
             symbolTable.getColumnModel().getColumn(column).setCellRenderer(centerRenderer);
         }
-
     }
 
     {

@@ -44,6 +44,11 @@ public class DataTableModel extends AbstractTableModel {
         return null;
     }
 
+    public void updateTable(HashMap<Character, Double> newData) {
+        this.data = newData;
+        fireTableDataChanged(); // Уведомляем таблицу о том, что данные изменились
+    }
+
 
     @Override
     public String getColumnName(int col) {

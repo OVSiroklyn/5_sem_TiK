@@ -2,6 +2,7 @@ package org.info_ammount.calculate;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.TreeMap;
 
 public class OccureFrequency {
     public static double charFrequency(String word, char n) { // Здійснює підрахунок частоти появи символу в тексті повідомлення
@@ -22,6 +23,9 @@ public class OccureFrequency {
             allChar.put(i, charFrequency(word, i));
         }
         System.out.println(allChar);
+        TreeMap<Character, Double> treeChar = new TreeMap<>();
+        treeChar.putAll(allChar);
+        allChar.putAll(treeChar);
         return allChar;
     }
 }
