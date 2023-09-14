@@ -1,19 +1,12 @@
 package org.info_ammount.gui;
 
 import javax.swing.table.AbstractTableModel;
-import java.util.ArrayList;
 import java.util.LinkedHashMap;
-
-
-import javax.swing.table.AbstractTableModel;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.ArrayList;
 
 public class DataTableModel extends AbstractTableModel {
 
     private LinkedHashMap<Character, Double> data;
-    private String[] columnNames = {"Character", "Value", ""};
+    private String[] columnNames = {"Символ", "Частота", ""};
 
     public DataTableModel(LinkedHashMap<Character, Double> data) {
         this.data = data;

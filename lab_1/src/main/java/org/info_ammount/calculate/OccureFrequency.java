@@ -17,9 +17,7 @@ public class OccureFrequency {
         for (int i = 0; i < word.length(); i++) {
             allChar.put(word.charAt(i), 0.0);
         }
-        for (Character i : allChar.keySet()){
-            allChar.put(i, charFrequency(word, i));
-        }
+        allChar.replaceAll((i, v) -> charFrequency(word, i));
         System.out.println(allChar);
 
 
@@ -36,12 +34,7 @@ public class OccureFrequency {
     }
     static <K, V> void orderByValue(LinkedHashMap<K, V> m, final Comparator<? super V> c) {
         List<Map.Entry<K, V>> entries = new ArrayList<>(m.entrySet());
-        Collections.sort(entries, new Comparator<Map.Entry<K, V>>() {
-            @Override
-            public int compare(Map.Entry<K, V> lhs, Map.Entry<K, V> rhs) {
-                return c.compare(lhs.getValue(), rhs.getValue());
-            }
-        });
+        entries.sort((lhs, rhs) -> c.compare(lhs.getValue(), rhs.getValue()));
         m.clear();
         for(Map.Entry<K, V> e : entries) {
             m.put(e.getKey(), e.getValue());

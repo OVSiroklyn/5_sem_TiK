@@ -4,29 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5607d7d2-e09d-4ab7-ba45-00e15e2d5bef" name="Changes" comment="sol">
-      <change beforePath="$PROJECT_DIR$/.gradle/8.2/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.2/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.2/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/checksums/sha1-checksums.bin" afterDir="false" />
+    <list default="true" id="5607d7d2-e09d-4ab7-ba45-00e15e2d5bef" name="Changes" comment="1. парсер теперь на java&#10;2. добавлено немного обработки ошибок&#10;3. этот ебучий иф елс поправлено тоже">
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_09_2023_18_10__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_09_2023_18_10__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_09_2023_19_24__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_09_2023_19_24__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/info_ammount/calculate/OccureFrequency.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/info_ammount/calculate/OccureFrequency.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/info_ammount/gui/DataTableModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/info_ammount/gui/DataTableModel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/info_ammount/gui/MainWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/info_ammount/gui/MainWindow.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/info_ammount/parser/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/info_ammount/parser/Parser.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/info_ammount/calculate/OccureFrequency.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/info_ammount/calculate/OccureFrequency.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/info_ammount/gui/DataTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/info_ammount/gui/DataTableModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/info_ammount/gui/MainWindow.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/info_ammount/gui/MainWindow.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/info_ammount/gui/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/info_ammount/gui/MainWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/info_ammount/parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/info_ammount/parser/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/info_ammount/parser/server.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/info_ammount/util/LinkedHashMapSorter.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,20 +76,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propGUI&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -99,7 +99,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1694442793653</updated>
-      <workItem from="1694671720383" duration="1513000" />
+      <workItem from="1694671720383" duration="1920000" />
+      <workItem from="1694686523477" duration="1962000" />
+      <workItem from="1694694406327" duration="580000" />
+      <workItem from="1694695554881" duration="122000" />
+      <workItem from="1694695693999" duration="257000" />
+      <workItem from="1694695968178" duration="830000" />
     </task>
     <task id="LOCAL-00001" summary="sol">
       <option name="closed" value="true" />
@@ -109,7 +114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694448508418</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="1. парсер теперь на java&#10;2. добавлено немного обработки ошибок&#10;3. этот ебучий иф елс поправлено тоже">
+      <created>1694673544583</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1694673544583</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,6 +141,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="sol" />
-    <option name="LAST_COMMIT_MESSAGE" value="sol" />
+    <MESSAGE value="1. парсер теперь на java&#10;2. добавлено немного обработки ошибок&#10;3. этот ебучий иф елс поправлено тоже" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. парсер теперь на java&#10;2. добавлено немного обработки ошибок&#10;3. этот ебучий иф елс поправлено тоже" />
   </component>
 </project>
