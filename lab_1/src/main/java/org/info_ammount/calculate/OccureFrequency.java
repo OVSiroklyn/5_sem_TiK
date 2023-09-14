@@ -1,6 +1,6 @@
 package org.info_ammount.calculate;
 
-import java.util.TreeMap;
+import java.util.*;
 
 public class OccureFrequency {
     public static double charFrequency(String word, char n) { // Здійснює підрахунок частоти появи символу в тексті повідомлення
@@ -12,8 +12,8 @@ public class OccureFrequency {
         }
         return (double) freq / (double) word.length();
     }
-    public static TreeMap<Character, Double> allCharCounter(String word){ // Видає перелік усіх частот появи у форматі HashSet
-        TreeMap<Character, Double> allChar = new TreeMap<>();
+    public static LinkedHashMap<Character, Double> allCharCounter(String word){ // Видає перелік усіх частот появи у форматі HashSet
+        LinkedHashMap<Character, Double> allChar = new LinkedHashMap<>();
         for (int i = 0; i < word.length(); i++) {
             allChar.put(word.charAt(i), 0.0);
         }
@@ -21,9 +21,30 @@ public class OccureFrequency {
             allChar.put(i, charFrequency(word, i));
         }
         System.out.println(allChar);
-    //    TreeMap<Character, Double> treeChar = new TreeMap<>();
-    //    treeChar.putAll(allChar);
-    //    allChar.putAll(treeChar);
+
+
+        orderByValue(allChar, new DoubleComparator());
+
         return allChar;
+    }
+    static class DoubleComparator implements Comparator<Double> {
+        @Override
+        public int compare(Double o1, Double o2) {
+            // Використовуйте метод compareTo для порівняння значень Double
+            return o1.compareTo(o2);
+        }
+    }
+    static <K, V> void orderByValue(LinkedHashMap<K, V> m, final Comparator<? super V> c) {
+        List<Map.Entry<K, V>> entries = new ArrayList<>(m.entrySet());
+        Collections.sort(entries, new Comparator<Map.Entry<K, V>>() {
+            @Override
+            public int compare(Map.Entry<K, V> lhs, Map.Entry<K, V> rhs) {
+                return c.compare(lhs.getValue(), rhs.getValue());
+            }
+        });
+        m.clear();
+        for(Map.Entry<K, V> e : entries) {
+            m.put(e.getKey(), e.getValue());
+        }
     }
 }

@@ -11,7 +11,7 @@ import javax.swing.table.TableColumnModel;
 import javax.swing.text.StyleContext;
 import java.awt.*;
 import java.util.ArrayList;
-import java.util.TreeMap;
+import java.util.LinkedHashMap;
 import java.util.Locale;
 
 import static javax.swing.JOptionPane.showMessageDialog;
@@ -37,7 +37,7 @@ public class MainWindow extends JFrame {
     private JComboBox comboBox1;
 
     private String[] chooseLang = {"ua", "en", "de"};
-    TreeMap<String, Integer> languages = new TreeMap<>();
+    LinkedHashMap<String, Integer> languages = new LinkedHashMap<>();
     public MainWindow() {
         me.setText(" LAB-1 " + " | ");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -89,7 +89,7 @@ public class MainWindow extends JFrame {
                 showMessageDialog(null, "а где текст");
             }
 
-
+            
             tableModel.updateTable(OccureFrequency.allCharCounter(text));
         });
 
@@ -97,12 +97,12 @@ public class MainWindow extends JFrame {
             inputTextField.setText("");
             inputLinkField.setText("");
             someLabel.setText("Количество информации |");
-            tableModel.updateTable(new TreeMap<Character, Double>());
+            tableModel.updateTable(new LinkedHashMap<Character, Double>());
         });
     }
 
     private void setupTable() {
-        tableModel = new DataTableModel(new TreeMap<Character, Double>());//new ArrayList<TreeMap<Character, Double>>()); // <-- getRecipeArrayList() in ()
+        tableModel = new DataTableModel(new LinkedHashMap<Character, Double>());//new ArrayList<LinkedHashMap<Character, Double>>()); // <-- getRecipeArrayList() in ()
 
         symbolTable.setModel(tableModel);
         TableColumnModel columnModel = symbolTable.getColumnModel();

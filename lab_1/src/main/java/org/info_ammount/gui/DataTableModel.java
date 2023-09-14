@@ -2,20 +2,20 @@ package org.info_ammount.gui;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;
-import java.util.TreeMap;
+import java.util.LinkedHashMap;
 
 
 import javax.swing.table.AbstractTableModel;
-import java.util.TreeMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.ArrayList;
 
 public class DataTableModel extends AbstractTableModel {
 
-    private TreeMap<Character, Double> data;
+    private LinkedHashMap<Character, Double> data;
     private String[] columnNames = {"Character", "Value", ""};
 
-    public DataTableModel(TreeMap<Character, Double> data) {
+    public DataTableModel(LinkedHashMap<Character, Double> data) {
         this.data = data;
     }
 
@@ -44,7 +44,7 @@ public class DataTableModel extends AbstractTableModel {
         return null;
     }
 
-    public void updateTable(TreeMap<Character, Double> newData) {
+    public void updateTable(LinkedHashMap<Character, Double> newData) {
         this.data = newData;
         fireTableDataChanged(); // Уведомляем таблицу о том, что данные изменились
     }
