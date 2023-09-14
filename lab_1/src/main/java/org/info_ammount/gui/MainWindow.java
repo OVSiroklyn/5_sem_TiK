@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.TreeMap;
 import java.util.Locale;
 
+import static javax.swing.JOptionPane.showMessageDialog;
 import static org.info_ammount.util.Gagulya.*;
 
 public class MainWindow extends JFrame {
@@ -64,31 +65,40 @@ public class MainWindow extends JFrame {
             }
 
             String text = "";
-
-            if (inputTextField.getText() != null) {
-                //получаем текст с пер
+            //текст
+            if (!inputTextField.getText().isEmpty()) {
                 text = inputTextField.getText();
-            } else if (inputLinkField.getText() != null) {
-                text = Parser.parseUrl(inputLinkField.getText());
-                //Parser.parseUrl(link);
+
+                InfoAmmount s = new InfoAmmount(text, selectedLangChars);
+                someLabel.setText("Количество информации | " + s.MethodHartli() + " | ");
+
+                //ссылка
+            } else if (!inputLinkField.getText().isEmpty()) {
+                try {
+                    text = Parser.getTextFromUrl(inputLinkField.getText());
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                    text = "";
+                    showMessageDialog(null, "сайт не ответил ");
+                }
+                InfoAmmount s = new InfoAmmount(text, selectedLangChars);
+                someLabel.setText("Количество информации | " + s.MethodHartli() + " | ");
+
+                //когда нет ничего
+            } else if (inputTextField.getText().isEmpty() && inputLinkField.getText().isEmpty()) {
+                showMessageDialog(null, "а где текст");
             }
 
-            tableModel.updateTable(OccureFrequency.allCharCounter(text));
 
-            InfoAmmount s = new InfoAmmount(text, selectedLangChars);
-            someLabel.setText("Количество информации | " + s.MethodHartli() + " | " + selectedLanguage + " " + selectedLangChars); // GetChota.getNumber()
+            tableModel.updateTable(OccureFrequency.allCharCounter(text));
         });
 
         clearButton.addActionListener(e -> {
             inputTextField.setText("");
             inputLinkField.setText("");
             someLabel.setText("Количество информации |");
-            //updateTable(getSumbolsMap().size()-1);
+            tableModel.updateTable(new TreeMap<Character, Double>());
         });
-    }
-
-    public static void updateTable(int rowIndex) {
-        tableModel.fireTableRowsInserted(rowIndex, rowIndex);
     }
 
     private void setupTable() {

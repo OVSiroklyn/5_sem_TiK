@@ -16,6 +16,8 @@ compileJava {
 }
 
 dependencies {
+    // https://mvnrepository.com/artifact/org.jsoup/jsoup
+    implementation 'org.jsoup:jsoup:1.16.1'
     // https://mvnrepository.com/artifact/com.intellij/forms_rt
     implementation 'com.intellij:forms_rt:7.0.3'
     // https://mvnrepository.com/artifact/com.formdev/flatlaf
