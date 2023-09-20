@@ -118,7 +118,7 @@
           <focusable value="false"/>
           <foreground color="-5524801"/>
           <horizontalTextPosition value="2"/>
-          <text value="///"/>
+          <text value="Опрацювати"/>
         </properties>
       </component>
       <component id="10f50" class="javax.swing.JButton" binding="clearButton" default-binding="true">

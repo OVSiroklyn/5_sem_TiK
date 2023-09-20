@@ -195,7 +195,7 @@ public class MainWindow extends JFrame {
         workButton.setFocusable(false);
         workButton.setForeground(new Color(-5524801));
         workButton.setHorizontalTextPosition(2);
-        workButton.setText("///");
+        workButton.setText("Опрацювати");
         mainPanel.add(workButton, new com.intellij.uiDesigner.core.GridConstraints(3, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, 1, null, new Dimension(150, 30), null, 1, false));
         clearButton = new JButton();
         clearButton.setBackground(new Color(-14605013));
