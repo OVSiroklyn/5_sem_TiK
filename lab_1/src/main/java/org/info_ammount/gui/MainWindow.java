@@ -10,10 +10,12 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableColumnModel;
 import javax.swing.text.StyleContext;
 import java.awt.*;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Locale;
 
 import static javax.swing.JOptionPane.showMessageDialog;
+import static org.info_ammount.calculate.OccureFrequency.*;
 import static org.info_ammount.util.GlobalData.*;
 
 public class MainWindow extends JFrame {
@@ -66,32 +68,35 @@ public class MainWindow extends JFrame {
             }
 
             String text = "";
+            LinkedHashMap<Character, Double>  EmptyHash = new LinkedHashMap<Character, Double>();
             //текст
             if (!inputTextField.getText().isEmpty()) {
                 text = inputTextField.getText();
+                EmptyHash  = allCharCounter(text);
 
                 InfoAmmount s = new InfoAmmount(text, selectedLangChars);
-                someLabel.setText("Кількість інформації | " + s.MethodHartli() + " | ");
+                someLabel.setText("Кількість інформації | " + s.calculateShannonEntropy(EmptyHash) + " | ");
 
                 //ссылка
             } else if (!inputLinkField.getText().isEmpty()) {
                 try {
                     text = Parser.getTextFromUrl(inputLinkField.getText());
+                    EmptyHash  = allCharCounter(text);
                 } catch (Exception ex) {
                     ex.printStackTrace();
                     text = "";
                     showMessageDialog(null, "Incorrect site address");
                 }
                 InfoAmmount s = new InfoAmmount(text, selectedLangChars);
-                someLabel.setText("Кількість інформації | " + s.MethodHartli() + " | ");
+                someLabel.setText("Кількість інформації | " + s.calculateShannonEntropy(EmptyHash) + " | ");
 
                 //когда нет ничего
             } else if (inputTextField.getText().isEmpty() && inputLinkField.getText().isEmpty()) {
                 showMessageDialog(null, "Input is null");
             }
 
-            
-            tableModel.updateTable(OccureFrequency.allCharCounter(text));
+
+            tableModel.updateTable(EmptyHash);
         });
 
         clearButton.addActionListener(e -> {
