@@ -1,21 +1,14 @@
 package org.info_ammount.gui;
 
 import javax.swing.table.AbstractTableModel;
-import java.util.ArrayList;
-import java.util.HashMap;
-
-
-import javax.swing.table.AbstractTableModel;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.ArrayList;
+import java.util.LinkedHashMap;
 
 public class DataTableModel extends AbstractTableModel {
 
-    private HashMap<Character, Double> data;
-    private String[] columnNames = {"Character", "Value", ""};
+    private LinkedHashMap<Character, Double> data;
+    private String[] columnNames = {"Символ", "Частота", ""};
 
-    public DataTableModel(HashMap<Character, Double> data) {
+    public DataTableModel(LinkedHashMap<Character, Double> data) {
         this.data = data;
     }
 
@@ -42,6 +35,11 @@ public class DataTableModel extends AbstractTableModel {
             return "";
         }
         return null;
+    }
+
+    public void updateTable(LinkedHashMap<Character, Double> newData) {
+        this.data = newData;
+        fireTableDataChanged(); // Уведомляем таблицу о том, что данные изменились
     }
 
 
