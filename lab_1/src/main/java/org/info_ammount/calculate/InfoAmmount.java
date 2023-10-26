@@ -7,21 +7,10 @@ import java.util.Map;
 public class InfoAmmount {
 
     private static int charquant; //довжина повідомлення в знаках
-    private String beginstr; //вхідна строка
-    private  int mquantity; //Кількість літер у алфавіту
-    private  double log2_m;
-    private  int iresult;
 
-    public InfoAmmount(String str, int mquantity)
+    public InfoAmmount(String str)
     {
-        this.beginstr = str;
-        this.mquantity = mquantity;
         this.charquant = str.length();
-        this.log2_m =  (Math.log(mquantity) / Math.log(2));
-    }
-    public int MethodHartli()
-    {
-        return  iresult = ( (charquant) * (int)log2_m);
     }
 
     public static double calculateShannonEntropy(HashMap<Character, Double> probabilities) {
