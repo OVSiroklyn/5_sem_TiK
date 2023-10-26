@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class InfoAmmount {
 
-    private   int charquant; //довжина повідомлення в знаках
+    private static int charquant; //довжина повідомлення в знаках
     private String beginstr; //вхідна строка
     private  int mquantity; //Кількість літер у алфавіту
     private  double log2_m;
@@ -28,9 +28,11 @@ public class InfoAmmount {
         double entropy = 0.0;
         for (HashMap.Entry<Character, Double> entry : probabilities.entrySet()) {
             double probability = entry.getValue();
-            entropy -= probability * log2(probability);
+            // entropy -= probability * log2(probability);
+            entropy += (charquant/probability  * log2(charquant/probability))  ;
         }
-        return entropy;
+        System.out.println(charquant);
+        return entropy ;
     }
 
     public static double log2(double x) {
