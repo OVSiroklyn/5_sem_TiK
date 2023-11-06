@@ -34,9 +34,10 @@ public class MainWindow extends JFrame {
     private JTable symbolTable;
     private JLabel someLabel;
     private JComboBox comboBox1;
-
     private JLabel spaceLabel;
 
+
+    private static String text = "";
     private String[] chooseLang = {"ua", "en", "de"};
     LinkedHashMap<String, Integer> languages = new LinkedHashMap<>();
     public MainWindow() {
@@ -68,15 +69,13 @@ public class MainWindow extends JFrame {
                 default -> selectedLangChars = 33;
             }
 
-            String text = "";
             LinkedHashMap<Character, Double>  EmptyHash = new LinkedHashMap<Character, Double>();
             //текст
             if (!inputTextField.getText().isEmpty()) {
                 text = inputTextField.getText();
                 EmptyHash  = allCharCounter(text);
 
-                InfoAmmount s = new InfoAmmount(text);
-                someLabel.setText("Кількість інформації | " + s.calculateShannonEntropy(EmptyHash) + " | \t\tКількість символів | " + text.length());
+                someLabel.setText("Кількість інформації | " + InfoAmmount.calculateShannonEntropy(EmptyHash) + " | \t\tКількість символів | " + text.length());
 
                 //ссылка
             } else if (!inputLinkField.getText().isEmpty()) {
@@ -88,8 +87,8 @@ public class MainWindow extends JFrame {
                     text = "";
                     showMessageDialog(null, "Incorrect site address");
                 }
-                InfoAmmount s = new InfoAmmount(text);
-                someLabel.setText("Кількість інформації | " + s.calculateShannonEntropy(EmptyHash) + " | \t\tКількість символів | " + text.length());
+
+                someLabel.setText("Кількість інформації | " + InfoAmmount.calculateShannonEntropy(EmptyHash) + " | \t\tКількість символів | " + text.length());
 
                 //когда нет ничего
             } else if (inputTextField.getText().isEmpty() && inputLinkField.getText().isEmpty()) {
@@ -267,5 +266,9 @@ public class MainWindow extends JFrame {
         return mainPanel;
     }
 
+
+    public static int getMessageLength() {
+        return text.length();
+    }
 }
 

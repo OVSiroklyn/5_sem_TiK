@@ -5,8 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5607d7d2-e09d-4ab7-ba45-00e15e2d5bef" name="Changes" comment="удачи">
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Vigilo/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Vigilo/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Vigilo/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Vigilo/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Vigilo/src/main/java/org/tik/vigilo/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/info_ammount/calculate/InfoAmmount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/info_ammount/calculate/InfoAmmount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/info_ammount/gui/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/info_ammount/gui/MainWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +85,8 @@
       <updated>1694442793653</updated>
       <workItem from="1698350849066" duration="877000" />
       <workItem from="1699196107521" duration="10000" />
+      <workItem from="1699274733761" duration="42000" />
+      <workItem from="1699274942116" duration="1675000" />
     </task>
     <task id="LOCAL-00001" summary="sol">
       <option name="closed" value="true" />
